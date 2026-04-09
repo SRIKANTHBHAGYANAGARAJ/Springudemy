@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to my personal website showcasing my work and services">
+    <title>My Home Page | Personal Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #333;
+            --text-light: #fff;
+            --text-dark: #333;
+            --hover-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-light);
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: var(--hover-color);
+            color: var(--text-dark);
+            outline: none;
+        }
+
+        main {
+            padding: 2rem;
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 90%;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header role="banner">
+    <h1>Welcome to My Website</h1>
+    <p>Professional Services & Solutions</p>
+</header>
+
+<nav role="navigation" aria-label="Main navigation">
+    <a href="#home" aria-current="page">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="/req/login" class="login-link">Login</a>
+</nav>
+
+<main id="main-content" role="main">
+    <section id="home">
+        <h2>Welcome</h2>
+        <p>Hello! I'm a professional offering various services to meet your needs. This website showcases my work and how I can help you achieve your goals.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Srikanth is a dedicated [ Software Engineer] in the [Department, e.g., IT Development] team at [Company Name].
+            With over [X years] of experience in [Key Skills, e.g., backend development, cloud solutions, and Agile methodologies],
+            he excels at [Core Responsibility, e.g., designing scalable systems and mentoring junior developers].
+            Since joining on [Date of Joining], Srikanth has played a pivotal role in [Achievement, e.g.,
+            launching the company’s flagship mobile app, improving system performance by 30%]
+            . Known for his [Strengths, e.g., problem-solving skills, collaborative spirit, and attention to detail],
+            he is passionate about [Interest, e.g., open-source contributions or AI innovation].
+            Outside work, Srikanth enjoys [Hobby, e.g., hiking, photography, or volunteering].</p>
+    </section>
+
+    <section id="services">
+        <h2>My Services</h2>
+        <ul>
+            <li>Consultation Services</li>
+            <li>Custom Solutions Development</li>
+            <li>Project Management</li>
+            <li>Training and Workshops</li>
+        </ul>
+    </section>
+</main>
+
+<footer role="contentinfo">
+    <p>&copy; <span id="current-year">2024</span> My Website. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@example.com" style="color: var(--text-light);">info@example.com</a></p>
+</footer>
+
+<script>
+    // Update copyright year automatically
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Add skip to content link functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const skipLink = document.createElement('a');
+        skipLink.href = '#main-content';
+        skipLink.className = 'skip-link';
+        skipLink.textContent = 'Skip to main content';
+        skipLink.style.position = 'absolute';
+        skipLink.style.left = '-9999px';
+        skipLink.style.top = '0';
+        skipLink.style.backgroundColor = '#333';
+        skipLink.style.color = 'white';
+        skipLink.style.padding = '1rem';
+        skipLink.style.zIndex = '1000';
+
+        skipLink.addEventListener('focus', function() {
+            this.style.left = '0';
+        });
+
+        document.body.insertBefore(skipLink, document.body.firstChild);
+    });
+</script>
+</body>
+</html>
